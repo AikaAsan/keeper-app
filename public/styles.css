@@ -11,6 +11,9 @@ html {
 body {
   background: #eee;
   padding: 0 16px;
+  background-color: #a9ccd9;
+  background-image: url("https://www.transparenttextures.com/patterns/arabesque.png");
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 
 header {
@@ -73,7 +76,7 @@ footer p {
   outline: none;
 }
 
-form {
+form.create-note {
   position: relative;
   width: 480px;
   margin: 30px auto 20px auto;
@@ -83,8 +86,8 @@ form {
   box-shadow: 0 1px 5px rgb(138, 137, 137);
 }
 
-form input,
-form textarea {
+form.create-note input,
+form.create-note textarea {
   width: 100%;
   border: none;
   padding: 4px;
@@ -94,7 +97,7 @@ form textarea {
   resize: none;
 }
 
-form button {
+form.create-note button {
   position: absolute;
   right: 18px;
   bottom: -18px;

@@ -1,6 +1,6 @@
 import React from "react";
 // import notes from "../notes";
-import InputArea from "./InputArea"
+import DeleteIcon from '@material-ui/icons/Delete';
 
 
 function Note(props) {
@@ -9,6 +9,8 @@ function Note(props) {
          props.onDelete(props.id);
   
     }
+    const clicked = true;
+    
     return (
         <div className="note" 
             // onClick={()=> {
@@ -17,7 +19,9 @@ function Note(props) {
         >
             <h1>{props.title}</h1>
             <p>{props.content}</p>
-            <button onClick={handleClick}>Delete</button>
+            <button onClick={handleClick}>
+                <DeleteIcon/>
+            </button>
         </div>
     );
 }
