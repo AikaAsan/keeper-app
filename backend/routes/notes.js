@@ -2,7 +2,7 @@ const router = require('express').Router();
 let Note = require('../models/notes.model');
 
 //first route that handles incoming http get requests
-//mongoose method find() will find all the users from the mongodb atlas DB
+//mongoose method find() will find all the notes from the mongodb atlas DB
 router.route("/").get((req, res) => {
     Note.find()
         .then(notes => res.json(notes))
@@ -11,6 +11,7 @@ router.route("/").get((req, res) => {
 
 // second end point handles add request
 router.route('/add').post((req, res) => {
+    console.log('in add route res:', res)
     const title = req.body.title;
     const content = req.body.content;
 

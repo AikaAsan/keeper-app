@@ -9,6 +9,7 @@ function InputArea(props) {
     const [isExpanded, setExpanded] = useState(false)
 
     const [note, setNote] = useState({
+        id: "",
         title: "",
         content: ""
     });
@@ -34,6 +35,7 @@ function InputArea(props) {
 
 
         setNote({
+            id: "",
             title: "",
             content: ""
         });
