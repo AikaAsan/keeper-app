@@ -18,7 +18,7 @@ app.use(express.json());
 
 
 //start connecting to db, getting uri from mongodb website, setting environment variable
-const uri = process.env.ATLAS_URI;
+const uri = "mongodb+srv://Aika:MaratSafin123@cluster0.0uzuh.mongodb.net/NoteKeeper"
 mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true });
 
 const connection = mongoose.connection;
