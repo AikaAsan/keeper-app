@@ -3,7 +3,7 @@ import NoteList from "./NoteList";
 import DeleteIcon from '@material-ui/icons/Delete';
 import axios from "axios";
 
-// Note
+
 function Note(props) {
 
     function handleClick() {
