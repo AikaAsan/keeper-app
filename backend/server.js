@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
+const path = require('path');
 
 require("dotenv").config();
 
@@ -13,6 +14,7 @@ const port = process.env.PORT || 5000;
 
 //cors middleware
 app.use(cors());
+
 //allows to parse json
 app.use(express.json());
 
@@ -35,7 +37,12 @@ const notesRouter = require('./routes/notes');
 
 
 //use files. whenever you go to root url and put /, its going to load everything in notesROuter
-app.use('/', notesRouter);
+app.use('/note', notesRouter);
+
+app.use(express.static(path.join(__dirname, '../build')))
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../build'))
+})
 
 
 //what starts the server, starts listening on a certain port
