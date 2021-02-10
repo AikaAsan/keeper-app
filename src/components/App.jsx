@@ -13,7 +13,7 @@ function App() {
         <Router>
             <div>
                 <Header />
-                <InputArea onAdd={addNote} />
+                <InputArea />
                 <NoteList />
                 <Footer />
 
