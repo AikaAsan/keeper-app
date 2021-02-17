@@ -26,12 +26,11 @@ function InputArea(props) {
     }
 
     function submitNote(event) {
-        // props.onAdd(note);
+        props.onAdd(note);
         //connecting frontend to backend by causing frontend sending http requests to backend with the help of axois library
 
         //axios.post method will send http post request to the backend end point http://localhost:5000, the end point is expecting json object in the request body, we send it as a secont argument "note"
-        axios.post('/note/add', note)
-            .then(res => console.log(res.data));
+
 
 
         setNote({

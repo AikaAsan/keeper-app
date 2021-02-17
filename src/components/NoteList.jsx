@@ -3,6 +3,7 @@ import axios from "axios";
 import Note from "./Note";
 import { Link } from "react-router-dom";
 import DeleteIcon from '@material-ui/icons/Delete';
+import InputArea from "./InputArea";
 // const Note = props => (
 //     <div className="note">
 //         <h1>{props.title}</h1>
@@ -18,7 +19,7 @@ export default class NoteList extends Component {
         super(props);
         //not sure what bind means. Also I already have deleteNote function in App.jsx
         this.deleteNote = this.deleteNote.bind(this);
-
+        this.addNote = this.addNote.bind(this);
         this.state = {
             notes: []
         };
@@ -61,9 +62,22 @@ export default class NoteList extends Component {
         })
     }
 
+    async addNote(note) {
+        await axios.post('/note/add', note)
+
+        axios.get('/note')
+            .then(response => {
+                this.setState({ notes: response.data })
+            })
+            .catch((error) => {
+                console.log(error);
+            })
+
+    }
     render() {
         return (
             <div>
+                <InputArea onAdd={this.addNote} />
                 {this.noteList()}
             </div>
         )
